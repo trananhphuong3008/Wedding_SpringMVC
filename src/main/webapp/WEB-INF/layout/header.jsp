@@ -4,7 +4,8 @@
     Author     : Phuong
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
      Brand 
     <a class="navbar-brand" href="<c:url value="/"/>">Wedding Restaurant WebSite</a>
@@ -24,10 +25,10 @@
             </c:forEach>    
                 
                 <li class="nav-item">
-                    <a class="nav-link text-info" href="<c:url value="/cart"/>">CART <span class="badge badge-danger cartCounter">0</span></a>
+                    <a class="nav-link text-info" href="<c:url value="/cart"/>">CART <span class="badge badge-danger cartCounter">${cartStats.totalQuantity}</span></a>
                 </li>
         </ul>
-    </div>
+    </div>33
     <c:url value="/" var= "homeAction"/>
     <form class="form-inline" action="${homeAction}">
         <input class="form-control mr-sm-2"

@@ -31,6 +31,7 @@ com\dht\controllers\HomeControllers.class
 com\dht\pojo\Product.class
 com\dht\repository\impl\ProductRepositoryImpl.class
 com\dht\pojo\Cart.class
+com\dht\controllers\CartController.class
 com\dht\configs\HibernateConfig.class
 com\dht\pojo\Tag_.class
 com\dht\pojo\User_.class
