@@ -65,9 +65,9 @@ const deleteCart = (id) => {
             for (let i = 0; i < amount.length; i++)
                 amount[i].innerText = data.totalAmount;
             
-  //          location.reload()
-            let d = documemt.getElementById(`product${id}`)
-            d.style.display = "none"
+          location.reload()
+//            let d = documemt.getElementById(`product${id}`)
+//            d.style.display = "none"
         })
     }
 }
