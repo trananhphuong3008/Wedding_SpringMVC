@@ -26,20 +26,30 @@
             
         </tr>
         <c:forEach items="${carts.values()}" var="c">
-            <tr>
+            <tr id="product${c.id}">
                 <td>${c.id}</td>
                 <td>${c.name}</td>
                 <td>${c.price} VND</td>
                 <td>
                     <input type="number" 
                            class="form-control"
+                           onblur="updateCart(${c.id}, this)"
                            value="${c.quantity}"/>
                 </td>
                 <td>
-                    <input type="button" value="Delete" class="btn btn-danger"/>
+                    <input type="button" 
+                           onclick="deleteCart(${c.id})"
+                           value="Delete" class="btn btn-danger"/>
                 </td>
             </tr>
         </c:forEach>
     </table>
+    
+    <div class="alert alert-info">
+        <h3>Total Amount: <span class="cartAmount"> ${cartStats.totalAmount} VND </span></h3>
+        <h3>Total Quantity: <span class="cartCounter"> ${cartStats.totalQuantity} </span></h3>
+        
+    </div>
     <input type="button" value="PAY" class="btn btn-primary"/>
+    
 </c:if>

@@ -4,8 +4,12 @@
  */
 package com.dht.controllers;
 
+import com.dht.pojo.Cart;
 import com.dht.service.CategoryService;
 import com.dht.service.ProductService;
+import com.dht.utils.Utils;
+import java.util.Map;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,8 +33,9 @@ import org.springframework.web.bind.annotation.RequestParam;
         private ProductService productService;
         
         @ModelAttribute
-        public void commonAttribute(Model model){
+        public void commonAttribute(Model model, HttpSession session){
               model.addAttribute("categories",this.categoryService.getCategories());
+              model.addAttribute("cartStats", Utils.cartStats((Map<Integer, Cart>) session.getAttribute("cart")));
         }
                 
         @RequestMapping("/")       
