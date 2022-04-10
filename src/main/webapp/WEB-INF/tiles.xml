@@ -33,4 +33,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <put-attribute name="title" value="Cart"/>
         <put-attribute name="content" value="/WEB-INF/pages/cart.jsp"/>      
     </definition>
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Register for user"/>
+        <put-attribute name="content" value="/WEB-INF/pages/register.jsp"/>      
+    </definition>
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Login for user"/>
+        <put-attribute name="content" value="/WEB-INF/pages/login.jsp"/>      
+    </definition>
 </tiles-definitions>

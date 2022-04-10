@@ -30,6 +30,12 @@
                 <li class="nav-item">
                     <a class="nav-link text-info" href="<c:url value="/cart"/>">CART <span class="badge badge-danger cartCounter">${cartStats.totalQuantity}</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="<c:url value="/register"/>">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="<c:url value="/login"/>">Login</a>
+                </li>
         </ul>
     </div>33
     <c:url value="/" var= "homeAction"/>
