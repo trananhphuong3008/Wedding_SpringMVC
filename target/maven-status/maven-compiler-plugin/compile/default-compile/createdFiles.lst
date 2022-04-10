@@ -30,8 +30,12 @@ com\dht\repository\CategoryReposity.class
 com\dht\controllers\HomeControllers.class
 com\dht\pojo\Product.class
 com\dht\repository\impl\ProductRepositoryImpl.class
+com\dht\service\ReceiptService.class
 com\dht\pojo\Cart.class
 com\dht\controllers\CartController.class
+com\dht\repository\ReceiptRepository.class
 com\dht\configs\HibernateConfig.class
+com\dht\service\impl\ReceiptServiceImlp.class
+com\dht\repository\impl\ReceiRepositoryImpl.class
 com\dht\pojo\Tag_.class
 com\dht\pojo\User_.class

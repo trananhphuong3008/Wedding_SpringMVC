@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 public interface CategoryReposity {
     List<Category> getCategories();

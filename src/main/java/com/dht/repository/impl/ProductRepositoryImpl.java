@@ -6,7 +6,9 @@ package com.dht.repository.impl;
 
 import com.dht.pojo.Product;
 import com.dht.repository.ProductReposity;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -22,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Repository
 @Transactional
@@ -33,7 +35,7 @@ public class ProductRepositoryImpl implements ProductReposity{
     @Autowired
     private Environment env;
     @Override
-    public List<Product> getProducts(String kw, int page) {
+    public List<Product> getProducts(Map<String, String> params, int page) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         
         CriteriaBuilder b = session.getCriteriaBuilder();
@@ -42,11 +44,23 @@ public class ProductRepositoryImpl implements ProductReposity{
         Root root = q.from(Product.class);
         q.select(root);
         
+        List<Predicate> pre = new ArrayList<>(); 
+        String kw = params.get("kw");
         if (kw !=null  && !kw.isEmpty()){
             Predicate p = b.like(root.get("name").as(String.class), 
                     String.format("%%%s%%", kw));
-            q.where(p);
+            pre.add(p);
         }
+        
+        
+        String cateId = params.get("categoryId");
+        if (cateId != null && !cateId.isEmpty()) {
+            Predicate p2 = b.equal(root.get("categoryId"), Integer.parseInt(cateId)) ;
+            pre.add(p2);
+        }
+        
+        if (pre.size() > 0) 
+            q.where(pre.toArray(new Predicate[] {}));
         
         q.orderBy(b.desc(root.get("id")));
         

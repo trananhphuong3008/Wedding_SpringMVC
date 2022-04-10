@@ -21,7 +21,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Configuration
 @PropertySource("classpath:database.properties")

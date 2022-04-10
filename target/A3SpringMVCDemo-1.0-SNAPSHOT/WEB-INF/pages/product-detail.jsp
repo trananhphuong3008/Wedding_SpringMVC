@@ -1,7 +1,7 @@
 <%-- 
     Document   : product-detail
     Created on : Apr 8, 2022, 9:59:46 PM
-    Author     : Phuong
+    Author     : awmjo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

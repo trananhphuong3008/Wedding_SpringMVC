@@ -1,13 +1,13 @@
 <%-- 
     Document   : product
     Created on : Apr 7, 2022, 11:11:17 PM
-    Author     : Phuong
+    Author     : awmjo
 --%>
 
 <%--
     Document   : index
     Created on : Mar 28, 2022, 5:16:58 PM
-    Author     : Phuong
+    Author     : awmjo
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

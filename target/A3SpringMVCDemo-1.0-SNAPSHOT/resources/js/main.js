@@ -4,9 +4,9 @@
  */
 
 
-const addToCart = (id, name, price) =>{
+const addToCart = (id, name, price) => {
     event.preventDefault();
-    
+
     fetch("/A3SpringMVCDemo/api/add-cart", {
         method: 'post',
         body: JSON.stringify({
@@ -18,15 +18,15 @@ const addToCart = (id, name, price) =>{
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(res => res.json()).then(data =>{
+    }).then(res => res.json()).then(data => {
         console.info(data)
         let carts = document.getElementsByClassName('cartCounter')
-        for (let i =0; i<carts.length;i++)
+        for (let i = 0; i < carts.length; i++)
             carts[i].innerText = data.totalQuantity;
     })
 }
 
-const updateCart = (id, obj) =>  {
+const updateCart = (id, obj) => {
     event.preventDefault();
 
     fetch("/A3SpringMVCDemo/api/update-cart", {
@@ -53,9 +53,9 @@ const deleteCart = (id) => {
     if (confirm("Are u sure delete this item?") == true) {
         event.preventDefault();
 
-        fetch(`/A3SpringMVCDemo/api/delete-cart/${id}` , {
+        fetch(`/A3SpringMVCDemo/api/delete-cart/${id}`, {
             method: 'delete',
-           
+
         }).then(res => res.json()).then(data => {
             console.info(data)
             let carts = document.getElementsByClassName('cartCounter')
@@ -64,10 +64,23 @@ const deleteCart = (id) => {
             let amount = document.getElementsByClassName('cartAmount')
             for (let i = 0; i < amount.length; i++)
                 amount[i].innerText = data.totalAmount;
-            
-          location.reload()
-//            let d = documemt.getElementById(`product${id}`)
-//            d.style.display = "none"
+
+            location.reload()
+            let d = documemt.getElementById(`product${id}`)
+            d.style.display = "none"
+        })
+    }
+}
+
+const pay = () => {
+    if (confirm("Are you sure to pay this receipt?")) {
+        fetch("/A3SpringMVCDemo/api/pay", {
+            method: 'post'
+        }).then(res => {
+            if (res.status === 201)
+                location.reload();
+            else
+                alert("something wrong!!!")
         })
     }
 }

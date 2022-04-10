@@ -12,7 +12,7 @@ import org.springframework.format.Formatter;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 public class CategoryFormatter implements Formatter<Category> {
 

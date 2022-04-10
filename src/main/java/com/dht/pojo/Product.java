@@ -32,7 +32,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Entity
 @Table(name = "product")

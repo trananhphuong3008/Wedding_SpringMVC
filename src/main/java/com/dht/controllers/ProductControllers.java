@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Controller
 @RequestMapping("/admin")

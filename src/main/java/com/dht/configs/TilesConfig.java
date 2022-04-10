@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Configuration
 public class TilesConfig {

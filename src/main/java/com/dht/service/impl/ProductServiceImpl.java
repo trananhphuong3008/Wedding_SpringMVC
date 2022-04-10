@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
     private Cloudinary cloudinary;
 
     @Override
-    public List<Product> getProducts(String kw, int page) {
-        return this.productReposity.getProducts(kw, page);
+    public List<Product> getProducts(Map<String, String> params, int page) {
+        return this.productReposity.getProducts(params, page);
     }
 
     @Override

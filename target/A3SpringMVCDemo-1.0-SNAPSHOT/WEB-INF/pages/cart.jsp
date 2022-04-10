@@ -1,7 +1,7 @@
 <%-- 
     Document   : cart
     Created on : Apr 9, 2022, 2:26:54 PM
-    Author     : Phuong
+    Author     : awmjo
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -23,7 +23,7 @@
             <th> Price </th>
             <th> Quantity </th>
             <th></th>
-            
+
         </tr>
         <c:forEach items="${carts.values()}" var="c">
             <tr id="product${c.id}">
@@ -44,12 +44,15 @@
             </tr>
         </c:forEach>
     </table>
-    
+
     <div class="alert alert-info">
         <h3>Total Amount: <span class="cartAmount"> ${cartStats.totalAmount} VND </span></h3>
         <h3>Total Quantity: <span class="cartCounter"> ${cartStats.totalQuantity} </span></h3>
-        
+
     </div>
-    <input type="button" value="PAY" class="btn btn-primary"/>
-    
+    <input type="button" 
+           value="Pay" 
+           onclick="pay()" 
+           class="btn btn-primary"/>
+
 </c:if>

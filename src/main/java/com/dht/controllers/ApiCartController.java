@@ -4,11 +4,14 @@
  */
 package com.dht.controllers;
 
+import com.cloudinary.http44.api.Response;
 import com.dht.pojo.Cart;
+import com.dht.service.ReceiptService;
 import com.dht.utils.Utils;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,12 +24,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 
 @RestController
 @RequestMapping("/api")
 public class ApiCartController {
+    @Autowired
+    private ReceiptService receiptService;
     @PostMapping("/add-cart")
     public  ResponseEntity<Map<String, String>> addToCart(HttpSession session,
             @RequestBody Cart c){
@@ -74,6 +79,19 @@ public class ApiCartController {
           
           return new ResponseEntity(HttpStatus.BAD_REQUEST);
     
-}
+}   
+    @PostMapping("/pay")
+    public ResponseEntity addPayment(HttpSession session) {
+        Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
+        if(cart != null) {
+            if (this.receiptService.addReceipt((Map<Integer, Cart>) session.getAttribute("cart")) == true){
+                session.removeAttribute("cart");
+                return new ResponseEntity(HttpStatus.CREATED);
+            }
+        }
+        
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+                
+    }
 
 }
