@@ -4,6 +4,7 @@
  */
 package com.dht.pojo;
 
+import com.sun.org.apache.bcel.internal.generic.D2F;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Entity
 @Table(name = "receipt")
@@ -52,7 +53,9 @@ public class Receipt implements Serializable {
     private String note;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "receiptId")
     private List<ReceiptDetail> receiptDetailList;
-
+    {
+        createdDate = new Date();
+    }
     public Receipt() {
     }
 

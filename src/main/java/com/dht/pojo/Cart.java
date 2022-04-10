@@ -6,7 +6,7 @@ package com.dht.pojo;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 public class Cart {
     private int id;

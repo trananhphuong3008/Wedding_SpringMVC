@@ -8,6 +8,7 @@ import com.dht.pojo.Cart;
 import com.dht.service.CategoryService;
 import com.dht.service.ProductService;
 import com.dht.utils.Utils;
+import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Controller
 @ControllerAdvice
@@ -41,9 +42,14 @@ import org.springframework.web.bind.annotation.RequestParam;
         @RequestMapping("/")       
         public String index(Model model,
                 @RequestParam(name="kw", required=false) String kw,
-                @RequestParam(name="page",defaultValue = "1") Integer page){
+                @RequestParam(name="categoryId", required=false, defaultValue = "" ) String categoryId, 
+                @RequestParam(name="page", required=false, defaultValue = "1") Integer page){
     
-            model.addAttribute("products",this.productService.getProducts(kw,page));
+            Map<String, String> params = new HashMap<>();
+            params.put("kw", kw);
+            params.put("categoryId" , categoryId);
+            
+            model.addAttribute("products",this.productService.getProducts(params,page));
             model.addAttribute("productCounter",this.productService.countProducts());
             return "index";
         }

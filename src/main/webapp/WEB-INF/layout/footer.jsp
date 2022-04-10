@@ -1,7 +1,7 @@
 <%-- 
     Document   : footer
     Created on : Apr 8, 2022, 12:33:07 AM
-    Author     : Phuong
+    Author     : awmjo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

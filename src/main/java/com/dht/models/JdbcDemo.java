@@ -12,7 +12,7 @@ import java.sql.Types;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 public class JdbcDemo {
      public static void main(String[] args) throws ClassNotFoundException, SQLException {
@@ -21,7 +21,7 @@ public class JdbcDemo {
         
         // Step 2. Connecting to the database
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/mysaledbv3", 
-                "root", "Phuong@300800");
+                "root", "admin@123");
         
         // Step 3: Statement, PreparedStatement, CallableStatement
             // + definition --> executeUpdate

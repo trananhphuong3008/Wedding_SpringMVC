@@ -6,13 +6,14 @@ package com.dht.service;
 
 import com.dht.pojo.Product;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 public interface ProductService {
-    List<Product> getProducts(String kw, int page) ;
+    List<Product> getProducts(Map<String, String> params, int page) ;
     
     int countProducts();
     boolean addOrUpdateProduct(Product p);

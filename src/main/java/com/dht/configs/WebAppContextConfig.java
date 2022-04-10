@@ -25,7 +25,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 /**
  *
- * @author Phuong
+ * @author awmjo
  */
 @Configuration
 @EnableWebMvc
@@ -90,5 +90,5 @@ public class WebAppContextConfig implements WebMvcConfigurer{
             "secure", true));
     return c;
     }
-   
+    
 }
