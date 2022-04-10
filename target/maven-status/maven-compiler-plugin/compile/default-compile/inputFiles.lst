@@ -2,12 +2,16 @@ D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\configs\
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\repository\ProductReposity.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\Cart.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\ProdTag.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\repository\UserRepository.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\controllers\UserController.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\repository\impl\UserRepositoryImpl.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\configs\DispatcherServletInit.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\models\JdbcDemo.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\Comment.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\Product.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\service\impl\CategoryServiceImpl.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\ReceiptDetail.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\configs\SpringSecurityConfig.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\controllers\ProductControllers.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\pojo\Category.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\repository\CategoryReposity.java
@@ -31,3 +35,5 @@ D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\fomatter
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\controllers\ApiCartController.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\repository\ReceiptRepository.java
 D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\service\ReceiptService.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\service\UserService.java
+D:\Study\javaWeb\New folder (2)\Wedding_SpringMVC\src\main\java\com\dht\service\impl\UserServiceImpl.java
