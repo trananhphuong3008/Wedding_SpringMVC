@@ -15,8 +15,6 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.validation.Validator;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -55,19 +53,6 @@ public class WebAppContextConfig implements WebMvcConfigurer{
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new CategoryFormatter());
     }
-
-    @Override
-    public Validator getValidator() {
-        return validator(); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    @Bean
-    public LocalValidatorFactoryBean validator(){
-        LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
-        v.setValidationMessageSource(messageSource());
-        
-        return v;
-    }
     
     
     
@@ -96,4 +81,14 @@ public class WebAppContextConfig implements WebMvcConfigurer{
         resolver.setDefaultEncoding("UTF-8");
         return resolver;
     }
+    @Bean
+    public Cloudinary cloudinary(){
+        Cloudinary c = new Cloudinary(ObjectUtils.asMap(
+            "cloud_name", "dzpieobqn",
+            "api_key", "865588555229963",
+            "api_secret", "ZqoKUdjvHvriRkZCkBpgWQx0E_U",
+            "secure", true));
+    return c;
+    }
+    
 }
